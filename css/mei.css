@@ -1,0 +1,42 @@
+body{
+    background-color: #FDE05C;
+}
+.head-img{
+    width: 100px;
+    height: 173px;
+}
+.a{
+    width: 140px;
+    height: 140px;
+    
+}
+.b{
+    width: 119px;
+    height: 119px;
+    margin-right: -80px;
+    margin-left: -70px;
+}
+.bell {
+    width: 100vw;
+    background-color: #59638D;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.bereal-contain {
+    background-color: #fff;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.kuhaku{
+width: 150px;
+}
+.migiku{
+width: 0px;
+}
+.middle{
+    width: 0px;
+}
