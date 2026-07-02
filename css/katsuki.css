@@ -1,0 +1,33 @@
+body{
+    background-color:#9B9B9B;
+
+}
+.header{
+    background-color: #F5F5F5;
+}
+.introduction{
+    font-size: 40px;
+    font-family: "Zen Old Mincho", serif;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+.icon{
+    width: 184px;
+    height:auto;   
+    align-items: flex-end;
+}
+.main{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+.siru{
+    font-size: 40px;
+    font-family:  "Zen Old Mincho", serif;
+}
+.youshouki{
+    width: 1200px;
+    height:auto
+
+}
