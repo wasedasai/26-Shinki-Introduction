@@ -1,0 +1,68 @@
+/* 画面全体のグレーの背景 */
+body {
+    background-color: #ACACAC;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+/* 白っぽい背景のメインカード（サイズや余白を調整） */
+.firstpage {
+    background-color: #F8F0E4;
+    width: 95%;
+    max-width: 1400px; /* 広がりすぎを防ぐ */
+    margin: 20px auto;
+    padding: 40px; /* 内側に余白を作ってカンプに近づける */
+    box-sizing: border-box;
+    min-height: 90vh; /* 下部のメインコンテンツ用の高さを確保 */
+}
+
+/* ヘッダー全体を横並びにする */
+.firsttitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* 【改善】左側の横線：残りの幅いっぱいに広げて色をつける */
+.headerline {
+    flex: 1;               /* 利用可能なスペースをすべて埋める */
+    height: 1px;           /* 線の太さ */
+    background-color: #000000; /* 線の色（黒） */
+    margin-right: 40px;    /* 右側の文字との間の余白 */
+}
+
+/* PROFILEなどの文字を包む要素（横並びにして間隔をあける） */
+.content {
+    display: flex;
+    gap: 40px;            /* 文字と文字の間隔 */
+    margin-right: 40px;    /* 右側の三本線メニューとの間の余白 */
+}
+
+/* 各メニューのテキストスタイル */
+.headertitle {
+    font-size: 24px;       /* カンプのバランスに合わせて少し調整 */
+    font-weight: 800;      /* 太字にする */
+    color: #000000;        /* 文字色を黒にする */
+    text-decoration: none; /* リンクの下線を消す */
+    white-space: nowrap;   /* 途中で改行されるのを防ぐ */
+}
+
+/* 【改善】ハンバーガーメニューの枠組み */
+.menu {
+    width: 40px;           /* メニューの横幅 */
+    height: 25px;          /* メニューの全体の高さ */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 3本の線を上下均等に配置 */
+    cursor: pointer;
+}
+
+/* 【改善】三本線の1本ずつのスタイル */
+.menu span {
+    display: block;
+    width: 100%;
+    height: 1px;           /* 線の太さ */
+    background-color: #000000; /* 線の色（黒） */
+}
