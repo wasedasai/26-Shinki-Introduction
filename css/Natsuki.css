@@ -66,3 +66,41 @@ body {
     height: 1px;           /* 線の太さ */
     background-color: #000000; /* 線の色（黒） */
 }
+.word {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.myname{font-size: 3.5rem;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 20px;
+
+}
+.picture {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+.left-content{
+    width: 40%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+    text-align: left;
+    padding-left: 40px;
+}
+.hikkitai {
+    position: absolute;
+    top: 250%;
+    right: -40%;
+    font-size: 2rem;
+    transform: rotate(-10deg);
+    white-space: nowrap;
+    z-index: 10;
+
+}
