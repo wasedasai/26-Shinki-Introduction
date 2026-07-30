@@ -1,0 +1,85 @@
+
+body
+{
+    background-color:#1C3E7D;
+    margin: 0;
+    padding: 0;
+}
+.introduction{
+    font-size:32px;
+    color:aqua;
+}
+.header {
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+}
+.yhead{
+    color:#1C3E7D;
+    font-family:Kaushan Script;
+    font-size:80px;
+    transform: translateY(-25px);
+
+}
+.profile{
+    color:#FFFFFF;
+    font-family: "Jost", sans-serif;
+    font-size:60px;
+}
+.cafe{
+    width:674px;
+    height:692px;
+}
+.y{
+    background-color: aliceblue;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:100px;
+    height:100px;
+}
+.hamburger {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  width: 30px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* 三本線の共通スタイル */
+.hamburger span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.3s ease; /* アニメーションの速度 */
+}
+
+/* 各線の位置 */
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 11px; }
+.hamburger span:nth-child(3) { bottom: 0; }
+
+.name p{
+    font-size:220px;
+     font-family: "Jomhuria", sans-serif;
+     color: #FFFFFF;
+     line-height: 130px;
+     margin: 50;
+}
+.yuricafe{
+     display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+}
+.minion{
+    background-color: #FFFFFF;
+}
+.aaa {
+    height: 300px;
+}
