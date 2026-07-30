@@ -1,0 +1,81 @@
+a{
+    color: #F4F6F9;
+    font-size: 24px;
+    text-decoration: none;
+}
+.zen-dots-regular {
+  font-family: "Zen Dots", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.noto-sans-jp-<uniquifier> {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+.header{
+    width: 1440px; height: 60px;
+    background-color: #3f4853;
+    color: #F4F6F9;
+    font-family: Zen Dots;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.snsicon{
+    opacity: 100%;
+    display: flex;
+    width: 48px ;height: auto;
+}
+.headerleft{
+    margin-left: 50px;
+    font-size: 24px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+.headercenter{
+    font-size: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.headerright{
+    margin-right: 50px;
+    font-size: 24px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+.tennis{
+    width: 1440px;height: auto;
+}
+.profile{
+    align-items: center;
+    font-size: 32px;
+    width: 1440px;height: 1024px;
+    background-color: #1a1a1a;
+    color: #F4F6F9;
+    display: flex;
+    justify-content: center;
+}
+.profiledetail{
+    background-color: #3C3C3C;
+    width: 1200px;height: 700px;
+    padding: 40px;
+    align-items: center;
+}
+.japanese{
+    font-family: Noto Sans JP;
+}
+.english{
+    font-family: Zen Dots;
+}
+.profileleft{
+    margin-bottom: 180px;
+}
+.profileright{
+    margin-right: 375px;
+    margin-bottom: 180px;
+}
