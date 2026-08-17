@@ -1,0 +1,335 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+    background-color: #fbdbd4;
+    font-family: sans-serif;
+    cursor:url('../html/img/cursor.png'),auto;
+}
+.header{
+    width: 100%;
+    background-color:#51c1e3;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 100;
+    opacity: 1;
+    transition: transform 0.5s ease ,opacity 0.5s ease;
+    height: 100px;
+}
+.header.hide{
+    transform: translateY(-100%);
+    opacity: 0;
+   
+}
+.nav{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    height: 100%;
+}
+.nav-item{
+    text-decoration: none;
+    width: 15%;
+    transition: transform 0.05s ease;
+    cursor:url('../html/img/cursor.png'),pointer;
+}
+.nav-item:active{
+    transform: translateY(3px);
+}
+.nav-item img{
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+}
+#profile{
+    scroll-margin-top: 0px;
+    padding-top: 5px;
+    text-align: center;
+    background-color:#F0FCFF;
+}
+#profile img{
+    width: 400px;
+    margin: auto;
+    
+}
+.flip-all-container{
+    position: relative;
+    width: 90%;
+    height: auto;
+    margin: 125px auto 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text-frame-image{
+    display: block;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    z-index: 10;
+}
+.profile-photo-wrapper{
+    width: 350px;
+    height: 350px;
+    margin:  0;
+    perspective: 1000px;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 50%;
+    cursor:url('../html/img/cursor.png'),pointer;
+}
+.profile-photo{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 25px;
+    border: 35px solid #FF9D8A;
+    display: block;
+}
+.flip-card-inner{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s ease-in-out;
+    transform-style:preserve-3d;
+}
+.flip-card-front, .flip-card-back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.flip-card-back{
+    transform: rotateY(180deg);
+}
+/* --- プロフィール画像（確実な横3列・Flexbox版） --- */
+.grid-container {
+  flex-wrap: wrap; /* 端までいったら自動で下の行に折り返す */
+  justify-content: center;  
+ display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 均等な3列 */
+  gap: 10px; /* 画像同士の隙間（好みに合わせて調整） */
+  
+  width: 100%;
+  max-width: 800px; /* 全体の最大幅 */
+  margin-top: 0px !important;
+  margin-bottom: 80px !important;
+  margin-left: auto; /* 画面の中央に配置 */
+  margin-right: auto;
+  padding: 0 20px 40px 20px; /* 画面の端にピタッとくっつかないようにするバリア */
+  box-sizing: border-box; /* 余白を計算に含める（はみ出し防止の絶対ルール） */
+}
+
+.grid-container img {
+  /* ▼ 💡ここがポイント！ 100%より小さくすることで画像が縮小されます */
+  width: 55%; 
+  
+  max-width: 400px; /* これ以上大きくならないようにするストッパー */
+  height: auto;
+  margin: 0 auto; /* 縮小した画像をマスの「ど真ん中」に配置 */
+  display: block;
+  object-fit: contain;
+  cursor:url('../html/img/cursor.png'),pointer;
+}
+/* --- クリックしたときの沈むアニメーション --- */
+.flip-img {
+  cursor: pointer; /* マウスを乗せると指のマークになるようにする */
+  transition: transform 0.1s ease; /* 0.1秒でスムーズに変化させる */
+}
+
+/* クリックされた瞬間にだけ適用される設定 */
+.flip-img.is-active {
+  transform: scale(0.9); /* 90%のサイズに縮小して沈んだように見せる */
+}
+#favorite{
+    scroll-margin-top: 0px;
+    padding-top: 5px;
+    text-align: center;
+    background-color:#F0FCFF;
+}
+#favorite img{
+    width: 400px;
+    margin: auto;
+}
+.grid-container-favorite {
+  flex-wrap: wrap; /* 端までいったら自動で下の行に折り返す */
+  justify-content: center;  
+ display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 均等な3列 */
+  gap: 10px; /* 画像同士の隙間（好みに合わせて調整） */
+  
+  width: 100%;
+  max-width: 800px; /* 全体の最大幅 */
+  margin-top: 0px !important;
+  margin-bottom: 80px !important;
+  margin-left: auto; /* 画面の中央に配置 */
+  margin-right: auto;
+  padding: 0 20px 40px 20px; /* 画面の端にピタッとくっつかないようにするバリア */
+  box-sizing: border-box; /* 余白を計算に含める（はみ出し防止の絶対ルール） */
+}
+
+.grid-container-favorite img {
+  /* ▼ 💡ここがポイント！ 100%より小さくすることで画像が縮小されます */
+  width: 55%; 
+  
+  max-width: 400px; /* これ以上大きくならないようにするストッパー */
+  height: auto;
+  margin: 0 auto; /* 縮小した画像をマスの「ど真ん中」に配置 */
+  display: block;
+  object-fit: contain;
+  cursor:url('../html/img/cursor.png'),pointer;
+}
+/* --- クリックしたときの沈むアニメーション --- */
+.flip-img-favorite {
+  cursor: pointer; /* マウスを乗せると指のマークになるようにする */
+  transition: transform 0.1s ease; /* 0.1秒でスムーズに変化させる */
+}
+
+/* クリックされた瞬間にだけ適用される設定 */
+.flip-img-favorite.is-active {
+  transform: scale(0.9); /* 90%のサイズに縮小して沈んだように見せる */
+}
+#qa{
+    scroll-margin-top: 0px;
+    padding-top: 5px;
+    text-align: center;
+    background-color:#F0FCFF;
+}
+#qa img{
+    width: 400px;
+    margin: auto;
+}
+.grid-container-qa {
+  flex-wrap: wrap; /* 端までいったら自動で下の行に折り返す */
+  justify-content: center;  
+ display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 均等な3列 */
+  gap: 10px; /* 画像同士の隙間（好みに合わせて調整） */
+  
+  width: 100%;
+  max-width: 800px; /* 全体の最大幅 */
+  margin-top: 0px !important;
+  margin-bottom: 80px !important;
+  margin-left: auto; /* 画面の中央に配置 */
+  margin-right: auto;
+  padding: 0 20px 40px 20px; /* 画面の端にピタッとくっつかないようにするバリア */
+  box-sizing: border-box; /* 余白を計算に含める（はみ出し防止の絶対ルール） */
+}
+
+.grid-container-qa img {
+  /* ▼ 💡ここがポイント！ 100%より小さくすることで画像が縮小されます */
+  width: 55%; 
+  
+  max-width: 400px; /* これ以上大きくならないようにするストッパー */
+  height: auto;
+  margin: 0 auto; /* 縮小した画像をマスの「ど真ん中」に配置 */
+  display: block;
+  object-fit: contain;
+  cursor:url('../html/img/cursor.png'),pointer;
+}
+/* --- クリックしたときの沈むアニメーション --- */
+.flip-img-qa {
+  cursor: pointer; /* マウスを乗せると指のマークになるようにする */
+  transition: transform 0.1s ease; /* 0.1秒でスムーズに変化させる */
+}
+
+/* クリックされた瞬間にだけ適用される設定 */
+.flip-img-qa.is-active {
+  transform: scale(0.9); /* 90%のサイズに縮小して沈んだように見せる */
+}
+/* --- Q&Aの上下の隙間を調整 --- */
+/* --- Q&Aの上下の隙間を調整 --- */
+#contact{
+    scroll-margin-top: 0px;
+    padding-top: 5px;
+    text-align: center;
+    background-color:#F0FCFF;
+}
+#contact img{
+    width: 400px;
+    margin: auto;
+}
+.grid-container-contact {
+  flex-wrap: wrap; /* 端までいったら自動で下の行に折り返す */
+  justify-content: center;  
+ display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 均等な3列 */
+  gap: 10px; /* 画像同士の隙間（好みに合わせて調整） */
+  
+  width: 100%;
+  max-width: 800px; /* 全体の最大幅 */
+  margin-top: 0px !important;
+  margin-bottom: 80px !important;
+  margin-left: auto; /* 画面の中央に配置 */
+  margin-right: auto;
+  padding: 0 20px 40px 20px; /* 画面の端にピタッとくっつかないようにするバリア */
+  box-sizing: border-box; /* 余白を計算に含める（はみ出し防止の絶対ルール） */
+}
+
+.grid-container-contact img {
+  /* ▼ 💡ここがポイント！ 100%より小さくすることで画像が縮小されます */
+  width: 55%; 
+  
+  max-width: 400px; /* これ以上大きくならないようにするストッパー */
+  height: auto;
+  margin: 0 auto; /* 縮小した画像をマスの「ど真ん中」に配置 */
+  display: block;
+  object-fit: contain;
+  cursor:url('../html/img/cursor.png'),pointer;
+}
+/* --- クリックしたときの沈むアニメーション --- */
+.flip-img-contact {
+  cursor: pointer; /* マウスを乗せると指のマークになるようにする */
+  transition: transform 0.1s ease; /* 0.1秒でスムーズに変化させる */
+}
+
+/* クリックされた瞬間にだけ適用される設定 */
+.flip-img-contact.is-active {
+  transform: scale(0.9); /* 90%のサイズに縮小して沈んだように見せる */
+}
+/* --- Q&Aの上下の隙間を調整 --- */
+/* --- Q&Aの上下の隙間を調整 --- */
+
+#profile > img {
+  /* ▼ 上の隙間を詰める（上の青いヘッダーや前の項目に近づける） */
+  margin-top: -10px !important; 
+  
+  /* ▼ 下の隙間を詰める（下のCOLORなどの画像を引き上げる） */
+  margin-bottom: -30px !important; 
+}
+/* --- Q&Aの上下の隙間を調整 --- */
+#favorite > img {
+  /* ▼ 上の隙間を詰める（上の青いヘッダーや前の項目に近づける） */
+  margin-top: -10px !important; 
+  
+  /* ▼ 下の隙間を詰める（下のCOLORなどの画像を引き上げる） */
+  margin-bottom: -30px !important; 
+}
+#qa > img {
+  /* ▼ 上の隙間を詰める（上の青いヘッダーや前の項目に近づける） */
+  margin-top: -10px !important; 
+  
+  /* ▼ 下の隙間を詰める（下のCOLORなどの画像を引き上げる） */
+  margin-bottom: -30px !important; 
+}
+#contact > img {
+  /* ▼ 上の隙間を詰める（上の青いヘッダーや前の項目に近づける） */
+  margin-top: -10px !important; 
+  
+  /* ▼ 下の隙間を詰める（下のCOLORなどの画像を引き上げる） */
+  margin-bottom: -30px !important; 
+}

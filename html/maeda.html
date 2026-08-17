@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>まえだ自己紹介</title>
+    <link rel="stylesheet" href="../css/maeda.css">
+</head>
+<body>
+<header class="header">
+    <nav class="nav">
+        <a href="#" class="nav-item active">
+            <img src="img/header/head-maeda.png">
+        </a>
+        <a href="#profile" class="nav-item">
+            <img src="img/header/head-profile.png">
+        </a>
+        <a href="#favorite" class="nav-item">
+            <img src="img/header/head-favorite.png">
+        </a>
+        <a href="#qa" class="nav-item">
+            <img src="img/header/head-qa.png"
+        </a>
+        <a href="#contact" class="nav-item">
+            <img src="img/header/head-contact.png">
+        </a>
+    </nav>
+</header>
+<main>
+    <div class="flip-all-container">
+        <img src="img/header/allaboutme.svg" class="text-frame-imge" alt="ALL ABOUT ME text">
+    <div id="flip-container" class="profile-photo-wrapper">
+        <div class="flip-card-inner" id="flip-inner">
+            <div class="flip-card-front">
+                <img src="img/seichou/saikin.jpg" id="front-img" class="profile-photo">
+            </div>
+            <div class="flip-card-back">
+                <img src="img/seichou/ハロウィン.jpg" id="back-img" class="profile-photo">
+            </div>
+        </div>
+    </div>
+    </div>
+    <section id="profile">
+        <img src="img/midashi/profile.png">
+        <div class="grid-container">
+      <img src="img/profile/koumoku/kokyou.png"  data-swapped="img/profile/jimothi.png" class="flip-img" alt="Hometown">
+      <img src="img/profile/koumoku/name.png" data-swapped="img/profile/nahomaeda.png" class="flip-img"  alt="Name">
+     <img src="img/profile/koumoku/education.png" data-swapped="img/profile/educationwase.png" class="flip-img"  alt="Education">
+      <img src="img/profile/koumoku/blood.png" data-swapped="img/profile/Atype.png" class="flip-img"  alt="Blood Type">
+      <img src="img/profile/koumoku/birthday.png" data-swapped="img/profile/birth.png" class="flip-img"  alt="Birthday">
+     <img src="img/profile/koumoku/MBTI.png" data-swapped="img/profile/ENFP.png" class="flip-img" alt="Mbti">
+  </div>
+</section>
+ <section id="favorite">
+        <img src="img/midashi/favorite.png">
+        <div class="grid-container-favorite">
+      <img src="img/favorite/FOOD.png"  data-swapped="img/favorite/kotae/食べ物.png" class="flip-img-favorite" alt="Food">
+      <img src="img/favorite/COLOR.png" data-swapped="img/favorite/kotae/色.png" class="flip-img-favorite"  alt="Color">
+     <img src="img/favorite/MUSIC.png" data-swapped="img/favorite/kotae/歌好きアウト.png" class="flip-img-favorite"  alt="Music">
+      <img src="img/favorite/BOOK.png" data-swapped="img/favorite/kotae/本.png" class="flip-img-favorite"  alt="Book">
+      <img src="img/favorite/MOVIE.png" data-swapped="img/favorite/kotae/映画.png" class="flip-img-favorite"  alt="Movie">
+     <img src="img/favorite/HOBBY.png" data-swapped="img/favorite/kotae/趣味.png" class="flip-img-favorite" alt="Hobby">
+  </div>
+</section>
+<section id="qa">
+        <img src="img/midashi/qa.png">
+        <div class="grid-container-qa">
+      <img src="img/qa/shitsumonn/将来.png"  data-swapped="img/qa/キッザニア質問回答アウト.png" class="flip-img-qa" alt="dream">
+      <img src="img/qa/shitsumonn/苦手.png" data-swapped="img/qa/早起き.png" class="flip-img-qa"  alt="badat">
+     <img src="img/qa/shitsumonn/マイブーム.png" data-swapped="img/qa/マンドリン.png" class="flip-img-qa"  alt="myboom">
+      <img src="img/qa/shitsumonn/一億.png" data-swapped="img/qa/天蓋.png" class="flip-img-qa"  alt="money">
+      <img src="img/qa/shitsumonn/超能力.png" data-swapped="img/qa/スピッツ.png" class="flip-img-qa"  alt="superpower">
+     <img src="img/qa/shitsumonn/きのたけ.png" data-swapped="img/qa/たけのこ.png" class="flip-img-qa" alt="kinokotakenoko">
+  </div>
+</section>
+<section id="contact">
+        <img src="img/midashi/contact.png">
+        <div class="grid-container-contact">
+      <img src="img/qa/shitsumonn/将来.png"  data-swapped="img/qa/キッザニア質問回答アウト.png" class="flip-img-contact" alt="dream">
+      <img src="img/qa/shitsumonn/苦手.png" data-swapped="img/qa/早起き.png" class="flip-img-contact"  alt="badat">
+     <img src="img/qa/shitsumonn/マイブーム.png" data-swapped="img/qa/マンドリン.png" class="flip-img-contact"  alt="myboom">
+      <img src="img/qa/shitsumonn/一億.png" data-swapped="img/qa/天蓋.png" class="flip-img-contact"  alt="money">
+      <img src="img/qa/shitsumonn/超能力.png" data-swapped="img/qa/スピッツ.png" class="flip-img-contact"  alt="superpower">
+     <img src="img/qa/shitsumonn/きのたけ.png" data-swapped="img/qa/たけのこ.png" class="flip-img-contact" alt="kinokotakenoko">
+  </div>
+</section>
+</main>
+<script>
+    let lastScrollY=0;
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll',()=>{
+        const currentScrollY=window.scrollY;
+        if(currentScrollY>lastScrollY && currentScrollY>50){
+            header.classList.add('hide');    
+        }else if(currentScrollY+20<lastScrollY){
+            header.classList.remove('hide');
+        }
+        lastScrollY=currentScrollY;
+    });
+</script>
+</footer>
+<script src ="maeda.js"></script>
+</body>
+</html>
