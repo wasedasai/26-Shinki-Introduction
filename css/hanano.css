@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  background-color: #FA7DE1;
+}
+
+
+
+
+.top-hero {
+  position: relative; 
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.top-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.top-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.85) 0%, transparent 90%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  animation: filterFadeIn 1s ease-out forwards;
+}
+
+.top-hero__text {
+  position: absolute;
+  top: 50%;
+  left: 10%; 
+  transform: translateY(-50%);
+  z-index: 2;
+  pointer-events: none;
+
+  color: #fff;
+  font-size: clamp(120px, 6vw, 300px); 
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  opacity: 0;
+
+  animation: textSlideIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+
+
+
+/* フィルター用 */
+@keyframes filterFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 文字用 */
+@keyframes textSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-50px); /* 左にずらしておく */
+    filter: blur(5px); /* ぼかしを入れて疾走感を出す */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0); /* 元の位置へ */
+    filter: blur(0);
+  }
+}
+
+.page-menu {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 120px 40px;
+
+  background-color: #222;
+}
+
+.circle-menu {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 900px;
+}
+
+.page-card {
+  position: absolute;
+
+  width: 240px;
+  height: 280px;
+  border-radius: 90px;
+
+  top: 50%;
+  left: 50%;
+  margin: -140px 0 0 -120px; 
+
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    filter 0.35s ease;
+  offset-path: ellipse(450px 300px at 50% 50%);
+  offset-rotate: 0deg; 
+}
+
+.page-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease,
+    filter 0.35s ease;
+}
+.page-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.03),
+      rgba(0,0,0,0.45)
+    );
+  transition: background 0.35s ease;
+}
+
+.page-card__title {
+  position: absolute;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  width: 85%;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  z-index: 2;
+}
+.page-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.18);
+  z-index: 10;
+}
+
+.page-card:hover img {
+  filter: brightness(1.18);
+  transform: scale(1.06);
+}
+
+.page-card:hover::after {
+  background: linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.05),
+      rgba(0,0,0,0.25)
+    );
+}
+
+
+.card01 { animation: move01 25s linear infinite; }
+.card02 { animation: move02 25s linear infinite; }
+.card03 { animation: move03 25s linear infinite; }
+.card04 { animation: move04 25s linear infinite; }
+.card05 { animation: move05 25s linear infinite; }
+.card06 { animation: move06 25s linear infinite; }
+.card07 { animation: move07 25s linear infinite; }
+
+/* 12時の位置 (75%) から時計回りに均等配置して1周させます */
+@keyframes move01 { from { offset-distance: 75%; } to { offset-distance: 175%; } }
+@keyframes move02 { from { offset-distance: 89.286%; } to { offset-distance: 189.286%; } }
+@keyframes move03 { from { offset-distance: 103.571%; } to { offset-distance: 203.571%; } }
+@keyframes move04 { from { offset-distance: 117.857%; } to { offset-distance: 217.857%; } }
+@keyframes move05 { from { offset-distance: 132.143%; } to { offset-distance: 232.143%; } }
+@keyframes move06 { from { offset-distance: 146.429%; } to { offset-distance: 246.429%; } }
+@keyframes move07 { from { offset-distance: 160.714%; } to { offset-distance: 260.714%; } }
+
+
+
+@media screen and (max-width: 768px) {
+  .top-hero {
+    height: 80vh;
+  }
+
+  .page-menu {
+    padding: 80px 20px;
+  }
+
+  .circle-menu {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .page-card {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0;
+
+    width: 100%;
+    height: 280px;
+
+    transform: none;
+    border-radius: 100px;
+    offset-path: none;
+    animation: none;
+  }
+
+  .page-card:hover {
+    transform: translateY(-7px);
+  }
+
+  .circle-center {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .circle-menu {
+    gap: 12px;
+  }
+
+  .page-card {
+    height: 230px;
+    border-radius: 80px;
+  }
+
+  .page-card__title {
+    font-size: 14px;
+    bottom: 24px;
+  }
+}
