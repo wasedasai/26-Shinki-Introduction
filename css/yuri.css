@@ -1,10 +1,16 @@
 
+html {
+  scroll-behavior: smooth;
+}
 body
 {
     background-color:#1C3E7D;
     margin: 0;
     padding: 0;
+  
 }
+
+
 .introduction{
     font-size:32px;
     color:aqua;
@@ -13,6 +19,14 @@ body
     display:flex;
     align-items:flex-end;
     justify-content:space-between;
+}
+.mid{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-grow: 1;
+  margin: 0 40px;
+
 }
 .yhead{
     color:#1C3E7D;
@@ -27,8 +41,8 @@ body
     font-size:60px;
 }
 .cafe{
-    width:674px;
-    height:692px;
+    width:600px;
+    height:600px;
 }
 .y{
     background-color: aliceblue;
@@ -43,8 +57,8 @@ body
   top: 20px;
   right: 20px;
   z-index: 100;
-  width: 30px;
-  height: 24px;
+  width: 60px;
+  height: 48px;
   background: none;
   border: none;
   cursor: pointer;
@@ -56,14 +70,76 @@ body
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: #333;
+  background-color: #FFFFFF;
   transition: all 0.3s ease; /* アニメーションの速度 */
 }
 
 /* 各線の位置 */
 .hamburger span:nth-child(1) { top: 0; }
-.hamburger span:nth-child(2) { top: 11px; }
+.hamburger span:nth-child(2) { top: 24px; }
 .hamburger span:nth-child(3) { bottom: 0; }
+
+/* --- 開いたときの3本線（×印に変形） --- */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(19px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0; /* 真ん中の線を消す */
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-19px) rotate(-45deg);
+}
+.hamburger.active span {
+  background-color: #000000; /* バツ印になったら黒色にする */
+}
+.hamburger.active {
+  height: 44px;
+}
+
+/* --- 出てくるメニュー画面 --- */
+.sp-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.95); /* 背景色 */
+  z-index: 90;
+  
+  /* 初期状態：画面の上に隠しておく */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* メニューが開いたとき（activeがついたとき） */
+.sp-nav.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* メニュー内のリスト */
+.sp-nav ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.sp-nav li {
+  margin: 30px 0;
+}
+
+.sp-nav a {
+  font-size: 24px;
+  color: #333;
+  text-decoration: none;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: bold;
+}
 
 .name p{
     font-size:220px;
@@ -74,12 +150,205 @@ body
 }
 .yuricafe{
      display:flex;
-    align-items:flex-end;
+    align-items:center;
     justify-content:space-between;
+    padding: 10px 30px;
+
 }
-.minion{
-    background-color: #FFFFFF;
+
+.main-content {
+  background-color: #ffffff; /* profileより下の背景色を白に指定 */
+  width: 100%;             /* 画面の幅（13インチでも14インチでも）に自動で合わせる */
+  max-width: 1440px;       /* ただし、大きなモニターで見ても1440px以上には広がらないように制限する */
+  margin: 0 auto;          /* 大きな画面で見たときに、コンテンツを画面の中央に寄せる */
+  box-sizing: border-box;  /* パディング（余白）を含めて100%の中に収める */
 }
-.aaa {
-    height: 300px;
+
+.section-title {
+  display: inline-block;
+  background-color: #C5E5DF; /* 画像にあった薄い水色 */
+  padding: 4px 16px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #333;
+  margin-left: 0;       /* 左側の外側余白をゼロにする */
+  text-align: left;     /* 文字を左揃えにする */
+}
+
+/* 写真と青いカードを横並びにする設定 */
+.profile-container {
+  display: flex;         /* 横並びにする魔法の命令 */
+  align-items: center;   /* 上下の中央に揃える */
+  gap: 55px;             /* 写真とカードの間のすき間 */
+  margin-top: 10px;
+ 
+}
+
+/* 左側の写真の設定 */
+.profile-img {
+  width: 400px;
+  height: 250x;
+  object-fit: cover;     /* 写真が縦横に変形するのを防ぐ */
+}
+
+/* 右側の青い楕円カードの設定 */
+.profile-card {
+  background-color: #1C3E7D; /* 濃い青色 */
+  color: white;             /* 文字を白色にする */
+  width: 800px;
+  height: 673px;
+  border-radius: 50%;        /* 角を極限まで丸くして「楕円」にする */
+
+  /* 中の文字を上下左右の中央付近に揃える設定 */
+  display: flex;
+  flex-direction: column;    /* 上から下に文字を並べる */
+  justify-content: center;   /* 上下の中央に配置 */
+  padding-left: 160px;        /* 文字が円の左端に寄りすぎないための余白 */
+  
+ 
+}
+
+/* カードの中の文字間隔 */
+.profile-card p {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  
+  /* 文字のサイズ */
+  font-size: 40px;
+  
+  /* 文字の太さ (Regular = 400 または normal) */
+  font-weight: normal; /* normal と書いてもOKです */
+  
+  /* 行同士の詰まり具合の微調整（お好みで） */
+  margin: 10px 0;
+
+}
+.favorite-section {
+  margin-top: 60px;
+  background-color: #1C3E7D; /* 青い背景色（Figmaと同じカラーコード） */
+  padding: 40px 60px 80px;   /* 上・左右・下の内側余白 */
+}
+
+/* 青い大きな背景枠 */
+.favorite-bg {
+  background-color: #1C3E7D; /* 青い背景色 */
+  padding: 60px 40px;        /* 内側の余白 */
+  margin-top: 20px;
+}
+
+/* 4枚のカードを 2列×2行 で並べるレイアウト（CSS Gridを使用） */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 均等に2列並べる */
+  gap: 50px 60px;                        /* カード同士のスキマ (上下40px 左右30px) */
+  max-width: 850px;                      /* 全体の幅の制限 */
+  margin: 0 auto;                        /* 中央に寄せる */
+}
+
+/* --- 白いカード単体の設定 --- */
+.favorite-card {
+  background-color: #ffffff; /* 白色のカード */
+  padding: 30px 20px 20px;
+  text-align: center;         /* 中の文字や画像を中央揃えにする */
+  position: relative;        /* テープの位置基準にするため設定 */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* ほんのり影をつける */
+  height: 500px;
+}
+
+/* 上の「マスキングテープ」風のデザイン */
+.tape {
+  position: absolute;
+  top: -30px;                /* カードの少し上にはみ出させる */
+  left: 50%;
+  transform: translateX(-50%); /* ぴったり横中央に配置 */
+  width: 280px;
+  height: 60px;
+  background-color: rgba(50, 50, 50, 0.4); /* ちょっと透けた黒テープ */
+}
+
+/* カードの中の画像 */
+.card-img {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;       /* 画像の縦横比を崩さない */
+  margin-top: 10px;      /* 上の余白 */
+  margin-bottom: 20px;   /* 画像と「趣味」の間の余白 */
+  
+}
+
+/* 「趣味」「食べ物」などのカテゴリ見出し */
+.card-category {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 50px;
+  color: #000000;
+  margin: 0 0 8px 0;
+}
+
+/* 詳細の文字 */
+.card-text {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 50px;
+  color: #000000;
+  line-height: 1.5;          /* 行間を少し空けて読みやすくする */
+  margin: 0;
+}
+.section-title{
+  color:#422C02
+}
+
+/* --- music セクション全体 --- */
+.music-section {
+  background-color: #FFFFFF; /* 背景の白*/
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 「music」ラベル */
+.music-banner {
+  background-color: #C5E5DF; /* ミントグリーン */
+  color: #422C02;
+  font-size: 60px;
+  font-weight: bold;
+  padding: 8px 24px;
+  margin-bottom: 30px;
+  font-family: "Konkhmer Sleokchher", sans-serif;
+  align-self: flex-start;    /* 👈 追記：自分（musicラベル）だけ左寄せる！ */
+
+}
+
+/* 3×2 に並べる画像エリア */
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 横に3列 */
+  gap: 15px;                             /* 画像同士のすき間 */
+  max-width: 500px;                      /* 全体の横幅（調整可） */
+  width: 100%;
+}
+
+/* アルバムジャケット画像 */
+.music-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;  /* 正方形に固定 */
+  object-fit: cover;    /* 画像が歪まないように調整 */
+  border-radius: 4px;   /* ほんのり角を丸く（不要なら消してOK） */
+}
+
+/* --- SNS フッター部分 --- */
+.sns-footer {
+  background-color: #0d3b85; /* 濃い青 */
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end; /* 👈 【重要】中身（アイコン）を右端へ寄せる */
+  align-items: center;
+  gap: 20px;                 /* アイコン同士の間隔 */
+}
+
+/* SNSアイコン画像 */
+.sns-footer img {
+  width: 90px;              /* アイコンの大きさ */
+  height: 90px;
+  border-radius: 12px;      /* BeRealやInsta風に角丸にする */
+  object-fit: cover;
+  
 }
