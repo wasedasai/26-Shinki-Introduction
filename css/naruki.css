@@ -3,16 +3,26 @@ a{
     font-size: 24px;
     text-decoration: none;
 }
+p{
+    margin: 0;
+}
 .zen-dots-regular {
   font-family: "Zen Dots", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
-.noto-sans-jp-<uniquifier> {
+.noto-sans-jp{
   font-family: "Noto Sans JP", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: bold;
   font-style: normal;
+}
+.japanese{
+    font-family: Noto Sans JP;
+    margin: 50px;
+}
+.english{
+    font-family: Zen Dots;
 }
 .header{
     width: 1440px; height: 60px;
@@ -50,32 +60,132 @@ a{
 }
 .tennis{
     width: 1440px;height: auto;
+    display: block;
 }
 .profile{
     align-items: center;
-    font-size: 32px;
+    font-size: 48px;
     width: 1440px;height: 1024px;
     background-color: #1a1a1a;
     color: #F4F6F9;
     display: flex;
     justify-content: center;
 }
-.profiledetail{
+.profilecard{
     background-color: #3C3C3C;
     width: 1200px;height: 700px;
     padding: 40px;
     align-items: center;
 }
-.japanese{
-    font-family: Noto Sans JP;
-}
-.english{
+.profiletitle{
+    margin-top: 0;
     font-family: Zen Dots;
 }
+.profiledetail{
+    line-height: 1;
+    font-size: 48px;
+    display: flex;
+    justify-content: space-between;
+}
 .profileleft{
-    margin-bottom: 180px;
+    margin-left: 180px;
 }
 .profileright{
-    margin-right: 375px;
-    margin-bottom: 180px;
+    margin-right: 180px;
+}
+.QA{
+    width: 1440px;
+    height: 2560px;
+    background-color: #ACACAC;
+    padding: 100px;
+    box-sizing: border-box;
+}
+.QAcard{
+    background-color: #818181;
+    color: #1a1a1a;
+    width: 380px;
+    height: 150px;
+    border-radius: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.5);
+}
+.QAtitle{
+    margin: 0;
+    font-size: 48px;
+    justify-self: center;
+    font-family: Zen Dots;
+}
+.QAcontent{
+    display: flex;
+    justify-content: space-between;
+    justify-self: center;
+    margin: 75px;
+}
+.Q{
+    background-color: #3C3C3C;
+    color: #EEEEEE;
+    width: 450px; height: 450px;
+    border-radius: 50%;
+    margin: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 36px;
+    box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.5);
+}
+.A{
+    background-color: #F4F6F9;
+    color: #3C3C3C;
+    width: 600px; height: 450px;
+    border-radius: 50%; 
+    margin: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 36px;
+    box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.5);
+}
+.album{
+    margin-left: 100px;
+    font-size: 48px;
+    font-family: Zen Dots;
+}
+.photo{
+    background-color: #F4F6F9;
+    width: 1440px;
+    height: 1024px;
+    box-sizing: border-box;
+    padding: 100px;
+}
+.pic-line{
+    justify-self: center;
+}
+.pic{
+    margin: 10px;
+}
+.footer{
+    background-color: #1a1a1a;
+    width: 1440px; height: 260px;
+    display: flex;
+    justify-content: center;
+}
+.mail{
+    color: #F4F6F9;
+    font-size: 32px;
+    font-family: Zen Dots;
+    margin-left: 150px;
+    align-self: center;
+}
+.top{
+    color: #F4F6F9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-self: center;
+    margin-left: 100px;
 }
