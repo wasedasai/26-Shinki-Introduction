@@ -11,8 +11,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jomhuria&family=Jost:ital,wght@0,100..900;1,100..900&family=Kaushan+Script&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fontsから Zen Maru Gothic を読み込む -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
     <title>yuri自己紹介サイト</title>
     </head>
 <body>
@@ -20,26 +29,148 @@
         <div class="y">
         <a class="yhead" href="">y</a>
         </div>
-        <a class="profile" href="">profile</a>
-        <a class="profile" href=""> favorite</a>
-        <a class="profile" href="">music</a>
+
+        <div class="mid">
+        <a class="profile" href="#profile">profile</a>
+        <a class="profile" href="#favorite"> favorite</a>
+        <a class="profile" href="#music">music</a>
+        </div>
         <button class="hamburger" id="is-hamburger" aria-label="メニューを開く">
             <span></span>
             <span></span>
             <span></span>
             </button>
+
+            <!-- 👈 ここから追加：出てくるメニュー画面 -->
+         <nav class="sp-nav" id="is-nav">
+  <ul>
+    <li><a class="nav-link" href="#profile">profile</a></li>
+    <li><a class="nav-link" href="#favorite">favorite</a></li>
+    <li><a class="nav-link" href="#music">music</a></li>
+  </ul>
+</nav>
        
     </section>
 
     <section class="yuricafe" >
+
      <div class="name">
      <p href="">Yuri<br>Takemura</p>
     </div>
 
-    <img class="cafe" src="../カフェ.jpg" alt="">
+    <img class="cafe" src="../写真/カフェ.jpg" alt="">
 </section>
-<section class="minion" >
 
-<div class="aaa"></div>
+<main class="main-content">
+<h2 id="profile" class="section-title">profile</h2>
+
+    <!-- 画像と丸いカードを「横並び」にするための枠組み -->
+    <div class="profile-container">
+      
+      <!-- 左側：写真 -->
+      <img src="../写真/ゆり写真.png" alt="プロフィール写真" class="profile-img">
+
+      <!-- 右側：青い楕円のカード -->
+      <div class="profile-card">
+        <p>名前：竹村優里</p>
+        <p>生年月日：2007年4月18日</p>
+        <p>血液型：B型</p>
+        <p>出身地：東京都</p>
+        <p>出身高校：女子学院高校</p>
+        <p>MBTI：ENFP</p>
+      </div>
+    </div>
+    
+      
+<section id="favorite" class="favorite-section">
+  
+  <!-- タイトル -->
+  <h2 class="section-title">favorite</h2>
+
+  <!-- 青い大きな背景の箱 -->
+  <div class="favorite-bg">
+    
+    <!-- カードを2行×2列で並べるためのグリッド箱 -->
+    <div class="card-grid">
+
+      <!-- 1枚目：趣味 -->
+      <div class="favorite-card">
+        <div class="tape"></div> <!-- 上のテープ -->
+        <img src="../写真/マイク.png" alt="趣味" class="card-img">
+        <p class="card-category">趣味</p>
+        <p class="card-text">音楽を聴くこと<br>カラオケ</p>
+      </div>
+
+      <!-- 2枚目：食べ物 -->
+      <div class="favorite-card">
+        <div class="tape"></div>
+        <img src="../写真/いちご.jpeg" alt="食べ物" class="card-img">
+        <p class="card-category">食べ物</p>
+        <p class="card-text">いちご<br>焼肉</p>
+      </div>
+
+      <!-- 3枚目：漫画 -->
+      <div class="favorite-card">
+        <div class="tape"></div>
+        <img src="../写真/暁のヨナ.jpg" alt="漫画" class="card-img">
+        <p class="card-category">漫画</p>
+        <p class="card-text">鬼滅の刃<br>暁のヨナ</p>
+      </div>
+
+      <!-- 4枚目：スポーツ -->
+      <div class="favorite-card">
+        <div class="tape"></div>
+        <img src="../写真/バドミントン.jpg" alt="スポーツ" class="card-img">
+        <p class="card-category">スポーツ</p>
+        <p class="card-text">バドミントン</p>
+      </div>
+
+    </div><!-- /.card-grid -->
+  </div><!-- /.favorite-bg -->
 </section>
+
+<!-- music セクション -->
+<section id="music" class="music-section">
+  <!-- タイトル -->
+  <div class="music-banner">music</div>
+
+  <!-- アルバム画像 3×2 のグリッド -->
+  <div class="music-grid">
+    <img src="../写真/そらんじ.jpeg" alt="アルバム1">
+    <img src="../写真/ノーダウト.jpg" alt="アルバム2">
+    <img src="../写真/pale blue.jpg" alt="アルバム3">
+    <img src="../写真/青のすみか.png" alt="アルバム4">
+    <img src="../写真/インフェルノ.png" alt="アルバム5">
+    <img src="../写真/宇宙の季節.png" alt="アルバム6">
+  </div>
+</section>
+
+<!-- SNS フッター（青い帯部分） -->
+<footer class="sns-footer">
+  <a href="https://line.me/ti/p/dMd8hJRKCk"><img src="../写真/LINE.png" alt="LINE"></a>
+  <a href=" https://www.instagram.com/yuringo_flower?igsh=MXJjOTF4azVraHpmeA%3D%3D&utm_source=qr"><img src="../写真/インスタ.png" alt="Instagram"></a>
+  <a href="https://bere.al/yuringoflower"><img src="../写真/BEREAL.png" alt="BeReal"></a>
+</footer>
+      </main>
+      
+
+      <script>
+  const hamburger = document.getElementById('is-hamburger');
+  const nav = document.getElementById('is-nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  // ハンバーガーボタンをクリックしたときの動き
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    nav.classList.toggle('active');
+  });
+
+  // メニュー内のリンクをクリックしたら、メニューを閉じる
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      nav.classList.remove('active');
+    });
+  });
+</script>
 </body>
