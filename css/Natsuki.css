@@ -5,7 +5,9 @@ body {
     padding: 0;
     font-family: "Inter", sans-serif;
 }
-
+ html{
+    scroll-behavior: smooth;
+ }
 /* 白っぽい背景のメインカード（サイズや余白を調整） */
 .firstpage {
     background-color: #F8F0E4;
@@ -72,17 +74,29 @@ body {
     align-items: center;
 }
 
-.myname{font-size: 3.5rem;
+.myname{font-size: 5.5rem;
     font-weight: bold;
-    line-height: 1.1;
-    margin-bottom: 20px;
+    line-height: 0.9;
+    margin-bottom: 40px;
 
 }
 .picture {
-    width: 60%;
+    width: 50%;
+    max-width: 1000px;
     display: flex;
     justify-content: center;
+    height: auto;
+    object-fit: contain;
+    margin-top: 40px;
+    align-items: center;
 }
+.picture img{
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+    margin-top: 100Spx;
+}
+
 .left-content{
     width: 40%;
     height: 100%;
@@ -96,11 +110,255 @@ body {
 }
 .hikkitai {
     position: absolute;
-    top: 250%;
-    right: -40%;
-    font-size: 2rem;
-    transform: rotate(-10deg);
+    top: 80%;
+    left: 50%;
+    font-size: 2.2rem;
+    transform: rotate(-12deg);
     white-space: nowrap;
     z-index: 10;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 
+}
+
+.profilepage{
+    padding: 40px 20px;
+    background-color: #ACACAC;
+    display: flex;
+    justify-content: center;
+}
+.profile-content{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.profile-card{
+    background-color: #F8F0E4;
+    width: 95%;
+    max-width: 1400px; /* 広がりすぎを防ぐ */
+    margin: 20px auto;
+    padding: 40px; /* 内側に余白を作ってカンプに近づける */
+    box-sizing: border-box;
+    min-height: 90vh; /* 下部のメインコンテンツ用の高さを確保 */
+}
+.profile-title-container h2{
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0 20px 0 0;
+}
+.profile-title-container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.profile-line{
+    flex-grow: 1;
+    height: 1px;
+    background-color: #555;
+}
+.icon img{
+    width: 500px;
+    height: 500px;
+    border-radius: 100%;
+    object-fit: cover;
+    margin-left: 60px;
+}
+.profile-text{
+    text-align: left;
+}
+.profile-item .label{
+    font-size: 1.8rem;
+    color: #000;
+    margin: 5
+}
+.profile-item h3{
+    font-size: 1.9rem;
+    font-weight: bold;
+    margin: 2px 0 0 0;
+    color: #000;
+}
+.favoritepage{
+    padding: 40px 20px;
+    background-color: #ACACAC;
+    display: flex;
+    justify-content: center;
+}
+.favorite-card{
+    background-color: #F8F0E4;
+    width: 95%;
+    max-width: 1400px; /* 広がりすぎを防ぐ */
+    margin: 20px auto;
+    padding: 40px; /* 内側に余白を作ってカンプに近づける */
+    box-sizing: border-box;
+    min-height: 90vh; 
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;/*
+     下部のメイコンテンツ用の高さを確保 */
+}
+.favorite-content{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.fav-item{
+    box-sizing: border-box;
+}
+.fav-text{
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    color: #000;
+    margin-left: 70px;
+}
+.fav-img{
+    width: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+    margin-left: 70px;
+}
+.item-kakigori{
+    width: 42%;
+}
+.item-kakigori{
+    width: 30%;
+    height: 280px;
+    object-fit: cover;
+}
+.item-live{
+    width: 48%;
+    margin-top: 50px;
+}
+.item-live .fav-img{
+    height: 300px;
+}
+.fav-text-soccer{
+    writing-mode: horizontal-tb;
+}
+.item-soccer{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+}
+.fav-text-soccer{
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: #000;
+    writing-mode: horizontal-tb;
+    margin: 0;
+}
+.fav-img-soccer{
+    width: 55%;
+    height: 250px;
+    object-fit: cover;
+}
+.favorite-title-container{
+   border-left: 2px solid #000; 
+   padding-left: 50px;
+   
+   display: flex;
+   align-items: center;
+}
+.favorite-line{
+   flex-grow: 1;
+    height: 0.1px;
+   background-color: #000;
+}
+.favorite-title{
+    
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+    margin: 1px;
+    color: #000;
+    margin-bottom: 300px;
+}
+.aboutme-page{
+     padding: 40px 20px;
+    background-color: #ACACAC;
+    display: flex;
+    justify-content: center;
+}
+.aboutme-card{
+    background-color: #F8F0E4;
+    width: 95%;
+    max-width: 1400px; /* 広がりすぎを防ぐ */
+    margin: 20px auto;
+    padding: 40px; /* 内側に余白を作ってカンプに近づける */
+    box-sizing: border-box;
+    min-height: 90vh; /* 下部のメインコンテンツ用の高さを確保 */
+}
+.aboutme-title-container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.aboutme-title-container h2{
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin: 0 20px 0 0;
+    color: #000;
+    letter-spacing: 1px;
+}
+.aboutme-line{
+    flex-grow: 1;
+    height: 1px;
+    background-color: #000;
+}
+.aboutme-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+.aboutme-col{
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+}
+.aboutme-img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 2px;
+    max-width: 500px;
+    max-height: 500px;
+    margin: 40px;
+}
+.aboutme-text{
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #000;
+    margin: 70px c
+}
+.left-col .aboutme-text{
+    margin-top: 12px;
+}
+.right-col .aboutme-text{
+    margin-bottom: 12px;
+}
+.footer-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+    padding: 10px;
+}
+.social-icons{
+    display: flex;
+    gap: 15px;
+}
+.icon-img{
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+}
+.email-text{
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 30px;
 }
