@@ -1,9 +1,19 @@
+html{
+    scroll-behavior: smooth;
+}
 body{
     background-color:#9B9B9B;
+    padding: 0;
+    margin: 0;
 
 }
+
 .header{
-    background-color: #F5F5F5;
+    background-color: #c2c2c2;
+}
+.youshouki{
+    width: 1200px;
+    height:auto
 }
 .introduction{
     font-size: 40px;
@@ -11,23 +21,147 @@ body{
     display:flex;
     justify-content: space-evenly;
     align-items: flex-end;
+    position: relative;
+    height:188px;
+    justify-content: flex-start;
+    .yashimawosiru{
+        position: absolute;
+        left: 80px;
+        color: black;
+        text-decoration: none;
+    }
+    .enkaku{
+        position: absolute;
+        left: 400px;
+        color: black;
+        text-decoration: none;
+    }
+    .otoiawase{
+        position: absolute;
+        right: 200px;    
+        color: black;
+        text-decoration: none;
+
+    }
 }
+
 .icon{
     width: 184px;
     height:auto;   
-    align-items: flex-end;
+    position:absolute;
+    left:50%;
+    transform: translateX(-50%);
+    top: 0;
 }
-.main{
+.main1{
+    font-size: 40px;
     display:flex;
     justify-content: space-evenly;
     align-items: flex-end;
-}
-.siru{
-    font-size: 40px;
     font-family:  "Zen Old Mincho", serif;
+    .name{
+        position: absolute;
+        left: 400px;
+    }
+    .birth{
+        position: absolute;
+        left: 400px;
+    }
+    .gakubu{
+        position: absolute;
+        left: 400px;
+    }
+    .gakka{
+        position: absolute;
+        left: 400px;
+    }
+    .koukou{
+        position: absolute;
+        left: 400px;
+    }
+    .band{
+        position: absolute;
+        left: 400px;
+    }
 }
-.youshouki{
-    width: 1200px;
-    height:auto
-
+.shasin1{
+    position: absolute;
+    width: 25%;
+    height: auto;
+    top: 1040px;
+    right: 40px;
+}
+.shasin2{
+    position: absolute;
+    width: 25%;
+    height: auto;
+    top: 1470px;
+    right: 40px;
+}
+.main2{
+    display: flex;
+    align-items: flex-end;
+    margin: 35px;
+    font-size: 40px;
+    font-family: "Zen Old Mincho",serif;
+}
+.text{
+    position: absolute;
+    top: 2035px;
+    left: 300px;
+    display: grid;
+    gap: 7px;
+    .text7{
+        position: relative;
+        top: -100px;
+    }
+    .text8{
+        position: absolute;
+        top: 875px;
+        display: grid;
+        gap: 5px;
+    }
+}
+.main3{
+    display: flex;
+    align-items: flex-end;
+    font-family: "Zen Old Mincho",serif;
+    margin: 35px;
+    font-size: 40px;
+}
+.situmon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+}
+.mail{
+    position: relative;
+    top: 100px;
+}
+.mail1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+}
+.mail2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mail3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    top: -30px;
+}
+.footer{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    position: relative;
+    top: 100px;
+    background-color: #c2c2c2;
 }
